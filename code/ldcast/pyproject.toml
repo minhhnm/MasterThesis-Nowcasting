@@ -1,0 +1,83 @@
+[build-system]
+build-backend = "hatchling.build"
+
+requires = [ "hatchling" ]
+
+[project]
+name = "mlcast"
+version = "0.0.1a4"
+description = "Machine learning weather nowcasting library"
+readme = "README.md"
+keywords = [ "machine-learning", "meteorology", "nowcasting", "precipitation", "pytorch", "radar", "weather" ]
+license = { text = "Apache-2.0" }
+maintainers = [
+  { name = "MLCast Community", email = "franch@fbk.eu" },
+]
+authors = [
+  { name = "Gabriele Franch", email = "franch@fbk.eu" },
+  { name = "Leif Denby", email = "lcd@dmi.dk" },
+]
+requires-python = ">=3.10"
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+
+dependencies = [
+  "fire>=0.7",
+  "ipykernel>=6.29.5",
+  "lightning>=2.5.2",
+  "numpy>=2.2.6",
+  "torch>=2.7.1",
+  "xarray>=2025.6.1",
+  "zarr<=3",
+]
+
+optional-dependencies.dev = [
+  "pre-commit>=3.5",
+  "ruff>=0.8",
+]
+urls.Documentation = "https://github.com/mlcast-community/mlcast"
+urls.Homepage = "https://github.com/mlcast-community/mlcast"
+urls.Issues = "https://github.com/mlcast-community/mlcast/issues"
+urls.Repository = "https://github.com/mlcast-community/mlcast"
+
+[tool.ruff]
+line-length = 120
+exclude = [ "docs/**/*_.py" ]
+
+format.indent-style = "space"
+format.quote-style = "double"
+format.line-ending = "auto"
+format.skip-magic-trailing-comma = false
+lint.select = [
+  "B",  # flake8-bugbear
+  "E",  # pycodestyle errors
+  "F",  # pyflakes
+  "I",  # isort
+  "UP", # pyupgrade
+  "W",  # pycodestyle warnings
+]
+lint.ignore = [  ]
+
+[tool.mypy]
+strict = false
+mypy_path = "src"
+explicit_package_bases = true
+exclude = [
+  "docs/.*",
+]
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true

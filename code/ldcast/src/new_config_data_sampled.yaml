@@ -1,0 +1,11 @@
+belgium:
+  radar:
+    data_dir: /data/brussel/vo/000/bvo00029/data/observations/RADCLIMrates_2017_2023_5m_be_v1/RADCLIMrates_f16.zarr
+    train_csv: /data/brussel/114/vsc11442/train_datacubes.csv
+    val_csv: /data/brussel/114/vsc11442/val_datacubes.csv
+    test_csv: /data/brussel/114/vsc11442/test_datacubes.csv
+    variables: ["precip_intensity_EDK"]
+    time_delta_minutes: 5
+    units: "mm/h"
+    origin: "upper"
+    transform_precip_to_dbz: true

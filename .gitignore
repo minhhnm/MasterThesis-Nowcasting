@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# HPC logs
+*.out
+*.err
+
+# Backups / temporary files
+*.bak
+*~
+_local_backups/
+
+# Model checkpoints
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+
+# Large prediction/output arrays
+*.zarr/
+*.npz
+*.npy
+*.h5
+*.hdf5
+
+# Training logs
+lightning_logs/
+wandb/
+logs/
+
+# Environments
+venv/
+.venv/
+env/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
